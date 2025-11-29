@@ -1,0 +1,76 @@
+[package]
+name = "bevy_switch"
+version = "0.2.0"
+edition = "2024"
+authors = ["Ibrahim Cesar"]
+description = "A crate to help port Bevy games to Nintendo Switch using emulators"
+license = "MIT"
+repository = "https://github.com/ibrahimcesar/rust-on-nintendo"
+keywords = ["bevy", "nintendo", "switch", "gamedev", "emulator"]
+categories = ["game-development", "game-engines"]
+
+[lib]
+name = "bevy_switch"
+path = "src/lib.rs"
+
+[dependencies]
+# Bevy 0.17 with no_std support available!
+# Using default features which include rendering, audio, etc.
+bevy = "0.17"
+
+# Switch mode: minimal no_std Bevy
+# Uncomment when building for actual Switch target
+# [target.'cfg(target_os = "horizon")'.dependencies]
+# bevy = { version = "0.17", default-features = false, features = [
+#     "libm",
+#     "critical-section",
+# ]}
+# nx = { git = "https://github.com/aarch64-switch-rs/nx" }
+
+[dev-dependencies]
+# Dependencies only needed for examples
+
+[features]
+default = ["std", "desktop"]
+
+# Standard library (desktop development)
+std = []
+desktop = ["std"]
+
+# no_std for embedded/Switch targets
+no_std = []
+switch = ["no_std"]
+
+# Math without std (uses libm)
+libm = []
+
+# Critical section for synchronization in no_std
+critical-section = []
+
+# Development profile - faster compile times
+[profile.dev]
+opt-level = 1
+
+[profile.dev.package."*"]
+opt-level = 3
+
+# Release profile - optimized for Switch
+[profile.release]
+lto = "thin"
+codegen-units = 1
+opt-level = 3
+strip = true
+
+# Switch-specific profile
+[profile.switch]
+inherits = "release"
+lto = true
+panic = "abort"
+
+[[example]]
+name = "crab_crossing"
+path = "examples/crab_crossing.rs"
+
+[[example]]
+name = "minimal_ecs"
+path = "examples/minimal_ecs.rs"

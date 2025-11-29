@@ -1,0 +1,23 @@
+# Cargo configuration for Nintendo Switch development
+# See: https://doc.rust-lang.org/rustc/platform-support/aarch64-nintendo-switch-freestanding.html
+
+# Uncomment for Switch builds:
+# [build]
+# target = "aarch64-nintendo-switch-freestanding"
+
+# Switch target configuration
+[target.aarch64-nintendo-switch-freestanding]
+# Build std library from source (required for Tier 3 targets)
+rustflags = ["-Zbuild-std=core,alloc"]
+
+# Use LLD linker for better compatibility
+[target.x86_64-apple-darwin]
+rustflags = ["-C", "link-arg=-fuse-ld=lld"]
+
+[target.aarch64-apple-darwin]
+rustflags = []
+
+# Aliases for convenience
+[alias]
+run-desktop = "run --features desktop"
+build-switch = "build --target aarch64-nintendo-switch-freestanding --features switch -Zbuild-std=core,alloc"

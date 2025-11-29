@@ -1,0 +1,23 @@
+# Rust
+/target
+Cargo.lock
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# macOS
+.DS_Store
+
+# Nintendo Switch build artifacts
+*.nro
+*.nso
+*.nsp
+*.nacp
+
+# Emulator files
+*.ryujinx/
+*.citron/

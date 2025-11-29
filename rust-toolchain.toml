@@ -1,0 +1,5 @@
+[toolchain]
+channel = "nightly"
+components = ["rust-src", "rustfmt", "clippy"]
+# Note: aarch64-nintendo-switch-freestanding is a Tier 3 target
+# and requires build-std, which needs nightly
