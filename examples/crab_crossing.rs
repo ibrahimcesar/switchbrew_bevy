@@ -1,10 +1,10 @@
-//! Crab Crossing - Example game using bevy_switch
+//! Crab Crossing - Example game using switchbrew_bevy
 //!
-//! A simple 3D game demonstrating bevy_switch capabilities.
+//! A simple 3D game demonstrating switchbrew_bevy capabilities.
 //! Run with: `cargo run --example crab_crossing`
 
 use bevy::prelude::*;
-use bevy_switch::prelude::*;
+use switchbrew_bevy::prelude::*;
 
 fn main() {
     App::new()
@@ -76,7 +76,7 @@ fn setup(
     info!("Switch buttons: Z=B, X=A, Arrows=D-Pad");
 }
 
-/// Move player using bevy_switch input abstraction
+/// Move player using switchbrew_bevy input abstraction
 fn move_player(
     switch_input: Res<SwitchInput>,
     mut query: Query<&mut Transform, With<Player>>,

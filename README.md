@@ -1,4 +1,4 @@
-# bevy_switch 🦀🎮
+# switchbrew_bevy 🦀🎮
 
 A Rust crate to help port [Bevy](https://bevyengine.org/) games to Nintendo Switch using emulators - no NDAs required.
 
@@ -27,14 +27,14 @@ Add to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-bevy_switch = { git = "https://github.com/ibrahimcesar/rust-on-nintendo" }
+switchbrew_bevy = { git = "https://github.com/ibrahimcesar/bevy-switch" }
 ```
 
 ## Usage
 
 ```rust
 use bevy::prelude::*;
-use bevy_switch::prelude::*;
+use switchbrew_bevy::prelude::*;
 
 fn main() {
     App::new()
@@ -65,7 +65,7 @@ fn handle_input(switch_input: Res<SwitchInput>) {
 ## Project Structure
 
 ```
-bevy_switch/
+switchbrew_bevy/
 ├── src/
 │   ├── lib.rs          # Main plugin and prelude
 │   ├── platform.rs     # Platform detection & config

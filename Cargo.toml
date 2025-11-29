@@ -1,16 +1,16 @@
 [package]
-name = "bevy_switch"
+name = "switchbrew_bevy"
 version = "0.2.0"
 edition = "2024"
 authors = ["Ibrahim Cesar"]
 description = "A crate to help port Bevy games to Nintendo Switch using emulators"
 license = "MIT"
-repository = "https://github.com/ibrahimcesar/rust-on-nintendo"
-keywords = ["bevy", "nintendo", "switch", "gamedev", "emulator"]
+repository = "https://github.com/ibrahimcesar/bevy-switch"
+keywords = ["bevy", "nintendo", "switch", "gamedev", "homebrew"]
 categories = ["game-development", "game-engines"]
 
 [lib]
-name = "bevy_switch"
+name = "switchbrew_bevy"
 path = "src/lib.rs"
 
 [dependencies]

@@ -1,4 +1,4 @@
-//! # bevy_switch
+//! # switchbrew_bevy
 //!
 //! A crate to help port Bevy games to Nintendo Switch using emulators.
 //!
@@ -9,7 +9,7 @@
 //!
 //! ```rust,no_run
 //! use bevy::prelude::*;
-//! use bevy_switch::prelude::*;
+//! use switchbrew_bevy::prelude::*;
 //!
 //! fn main() {
 //!     App::new()
@@ -44,7 +44,7 @@ use bevy::prelude::*;
 ///
 /// ```rust,no_run
 /// use bevy::prelude::*;
-/// use bevy_switch::SwitchPlugin;
+/// use switchbrew_bevy::SwitchPlugin;
 ///
 /// App::new()
 ///     .add_plugins(DefaultPlugins)
@@ -63,7 +63,7 @@ impl Plugin for SwitchPlugin {
 }
 
 fn log_platform_info(config: Res<platform::SwitchConfig>) {
-    info!("bevy_switch initialized");
+    info!("switchbrew_bevy initialized");
     info!("Platform: {}", config.platform.name());
     info!(
         "Resolution: {}x{}",
